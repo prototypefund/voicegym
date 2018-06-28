@@ -11,6 +11,7 @@ import de.voicegym.voicegym.R
 import de.voicegym.voicegym.recordings.RecordingsFragment.OnListFragmentInteractionListener
 import de.voicegym.voicegym.model.Recording
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.fragment_recordings.amplitudeView
 import kotlinx.android.synthetic.main.fragment_recordings.createdView
 import kotlinx.android.synthetic.main.fragment_recordings.durationView
 import kotlinx.android.synthetic.main.fragment_recordings.floatingActionButton2
@@ -74,6 +75,7 @@ class RecordingsAdapter(
             floatingActionButton2.setOnClickListener {
                 Snackbar.make(it, recording.fileName, Snackbar.LENGTH_SHORT ).show()
             }
+            amplitudeView.mp4File = recording.fileName
         }
     }
 }

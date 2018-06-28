@@ -24,7 +24,7 @@ class App : Application() {
                     val files = it.listFiles()
                     files.map {file ->
                         db.recordingDao().getByFileName(file.path) ?: db.recordingDao().insert(Recording().apply {
-                            fileName = file.path
+                            fileName = file.absolutePath
                             createdAt = file.lastModified()
                             updatedAt = file.lastModified()
                         })
